@@ -15,6 +15,7 @@
 
 <div id="canvas">
 	<div id="book-zoom">
+		<button onclick="nextBtn()">Next</button>
 		<div class="sj-book">
 			<div depth="5" class="hard"> <div class="side"></div> </div>
 			<div depth="5" class="hard front-side"> <div class="depth"></div> </div>
@@ -23,6 +24,7 @@
 			<div class="hard fixed back-side p111"> <div class="depth"></div> </div>
 			<div class="hard p112"></div>
 		</div>
+		<button onclick="prevBtn()">previous</button>
 	</div>
 	<div id="slider-bar" class="turnjs-slider">
 		<div id="slider"></div>
@@ -287,6 +289,20 @@ yepnope({
 });
 
 </script>
-
+<script>
+	
+	function nextBtn(){
+		var pageHash =window.location.hash;
+		pageHash=pageHash.slice(6);
+		var pageNum = Number(pageHash)
+		Hash.go(`page/${pageNum+2}`)
+	}
+	function prevBtn(){
+		var pageHash =window.location.hash;
+		pageHash=pageHash.slice(6);
+		var pageNum = Number(pageHash)
+		Hash.go(`page/${pageNum-2}`)
+	}
+</script>
 </body>
 </html>
