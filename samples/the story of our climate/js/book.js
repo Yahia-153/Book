@@ -25,6 +25,12 @@ function updateDepth(book, newPage) {
 		});
 	else
 		$('.sj-book .p35 .depth').css({width: 0});
+	if (newPage<36)
+		$('.sj-book .p35 ').css({
+	width:480
+		});
+	else
+		$('.sj-book .p35 ').css({width: 0});
 
 }
 
